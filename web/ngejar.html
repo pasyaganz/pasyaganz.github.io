@@ -1,0 +1,186 @@
+<html><meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/typeit@8.6.6/dist/index.umd.js"></script><link href="https://feeldreams.github.io/ngejar/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+  
+<head>
+<title>Script HTML</title>
+
+</head>
+<body>
+	
+   <!-- Ganti Audio di sini --><audio src="https://feeldreams.github.io/ngejar.mp3" id="linkmp3"></audio><script>audio = new Audio('' + linkmp3.src);</script>
+   
+   <div id="bodyblur">
+     <!-- Wallpaper --><img src="https://feeldreams.github.io/heikamu/wpmobil.jpg" id="wallpaper"/><div id="beneranblur"></div>
+   </div>
+
+   <div id='Content'>
+   	
+     <div id="suratin" onClick="memulai();">
+       <!-- Tombol Surat --><img src="https://rayyscoding.github.io/envelope.png"/>
+     </div>
+     <p id="ket">Klik Suratnya!</p>
+   
+     <div>
+         <!-- Stiker untuk Konten -->
+         <img src="https://feeldreams.github.io/ngumpet.gif" id="fotoakhir"/>
+         <img src="https://feeldreams.github.io/pusn.gif" id="fotoakhir1"/>
+         <img src="https://feeldreams.github.io/wortel.gif" id="fotoakhir2"/>
+         <img src="https://feeldreams.github.io/ywdh.gif" id="fotoakhir3"/>
+         <img src="https://feeldreams.github.io/bunga.gif" id="fotoakhir4"/>
+     </div>
+     <div><blockquote id='bq'>
+  
+       <!-- Konten Penerapan -->
+       <p id="kalimat">Ngejar Kamu Tuh Susah ya,</p>
+       <p id="kalimata">Kayak Rukun Islam yang Ke 5</p>
+       <p id="kalimatb">Kalo Mampu.. </p>
+       <p id="kalimatc">Hehehe </p>
+
+       <!-- Konten Pertanyaan -->
+       <p id="kalimat2">Iya Gak Sih? </p>
+
+       <!-- Konten Jawaban -->
+       <p id="kalimat3">Yeaayy!!!</p>
+       <p id="kalimatb3">Balas pesan ke WhatsApp aku yaa~</p>
+     </blockquote></div>
+
+      <!-- Pesan Ditolak -->
+     <div id="pesanditolak">
+       <img id="stikerditolak" src="https://feeldreams.github.io/ywdh.gif"/>
+       <p id="kataditolak">Nahh kan:(</p>
+     </div>
+   
+     <!-- Tombol Multifungsi -->
+     <div id="Tombol">
+       <a id="By" onClick="multifungsi()">
+         <b id="tmbl">Lanjut</b>
+         <b id="tmbl2">Engga</b>
+       </a>
+       
+       <a id="Bn" onClick="ditolak()">Iyaaa</a>
+     </div>
+     
+   </div>
+
+<!-- Jangan Edit Bagian Ini --><script>
+  ftom=0;jikakuis=0;ftganti=0;flag=1;flagg=1;fungsi=0;
+  
+  function memulai(){pesanwhatsapp = "Ah engga juga …";suratin.style="transition:all 1s ease;transform:scale(.1);opacity:0";ket.style="transition:all 1s ease;transform:scale(.1);opacity:0";setTimeout(mulaikonten,300)}
+  
+  function mulaikonten() {
+                          fungsi=1;
+                          suratin.style="display:none";
+                          ket.style="display:none";
+                          Content.style = "opacity:1;margin-top:4vh;";
+                          bodyblur.style="opacity:.75;animation:none";
+                          wallpaper.style="transform: scale(1);";
+                          bq.style = "position:relative;opacity:1;visibility:visible;margin-top:0;";
+
+                          audio.play();ftganti=0;ftmuncul();
+                          setTimeout(mulaiketik1,800);
+                          setTimeout(mulaiketik1b,2700);
+                          setTimeout(mulaiketik2,4300);
+                          setTimeout(mulaiketik3,5600);
+                         }
+  
+  function ftmuncul(){if(ftganti==0){fotoakhir.style="display:inline-flex;transition:all 0s ease;opacity:1;transform:scale(1)";}else{fotoakhir.src = fotoakhir4.src;fotoakhir.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1);padding:10px;";setTimeout(jjfoto,490);}}
+  function fthilang(){fotoakhir.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(.1)";}
+  function jjfoto(){fotoakhir.style.animation="rto .8s infinite alternate";}
+  
+  function tombol(){Tombol.style="opacity:1;transform: scale(1);margin-top:15px";
+                    if(jikakuis==0){Bn.style.display="none";ftom=1;} 
+                    if(jikakuis==1){tmbl.innerHTML=tmbl2.innerHTML;Bn.style="margin:12px 0 12px 12px";ftom=2;}}
+  
+  function multifungsi(){if(ftom==1){dilanjut();} if(ftom==2){diterima();} if(ftom==5){menuju();}}
+  
+  async function menuju(){await swals.fire('OK!', 'Kirim pesan ke WhatsApp aku, ya!', 'success');window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;Tombol.style="margin-top:15px;opacity:1;transform: scale(1);";}
+
+  const swalst = Swal.mixin({timer: 2777, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 100,}); const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageWidth: 100, imageHeight: 100,}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
+
+  vketik1=kalimat.innerHTML;kalimat.innerHTML = "";
+  vketik1b=kalimata.innerHTML;kalimata.innerHTML = "";
+  vketik2=kalimatb.innerHTML;kalimatb.innerHTML = "";
+  vketik3=kalimatc.innerHTML;kalimatc.innerHTML = "";
+  
+  function mulaiketik1(){
+  new TypeIt("#kalimat", {
+  strings: ["" + vketik1], startDelay: 1, speed: 40, waitUntilVisible: true,
+  afterComplete: function(){
+    kalimat.innerHTML = vketik1;
+  },}).go();
+  }
+  function mulaiketik1b(){
+  kalimat.style="display:none";
+  fotoakhir.src=fotoakhir1.src;
+  new TypeIt("#kalimata", {
+  strings: ["" + vketik1b], startDelay: 1, speed: 35, waitUntilVisible: true,
+  afterComplete: function(){
+    kalimata.innerHTML = vketik1b;
+  },}).go();
+  }
+  function mulaiketik2(){
+  wallpaper.style="transform: scale(2)";
+  fotoakhir.src=fotoakhir2.src;
+  kalimata.style="display:none";
+  new TypeIt("#kalimatb", {
+  strings: ["" + vketik2], startDelay: 1, speed: 40, waitUntilVisible: true,
+  afterComplete: function(){
+    kalimatb.innerHTML = vketik2;
+  },}).go();
+  }
+  function mulaiketik3(){
+  wallpaper.style="transform: scale(1)";
+  fotoakhir.src=fotoakhir3.src;
+  new TypeIt("#kalimatc", {
+  strings: ["" + vketik3], startDelay: 1, speed: 40, waitUntilVisible: true,
+  afterComplete: function(){
+    kalimatc.innerHTML = vketik3;
+    tombol();
+  },}).go();
+  }
+  
+  function dilanjut(){setTimeout(otomatis2,500);Tombol.style="opacity:0;transform: scale(.1);";jikakuis=1;setTimeout(tombol,1000);}
+  
+  function otomatis() {befanimkata();setTimeout(animkata,400);} 
+  function befanimkata(){kalimat.style="transform:scale(.3);";kalimatb.style="transform:scale(.3);";kalimatc.style="transform:scale(.3);";} 
+  function animkata() {kalimat.style="transform:scale(1);";kalimatb.style="transform:scale(1);";kalimatc.style="transform:scale(1);";}
+  
+  function otomatis2() {
+  kalimat.innerHTML = kalimat2.innerHTML;
+  kalimat.style="";kalimatb.style="display:none";kalimatc.style="display:none";}
+
+  function otomatis3() {befanimkata3();setTimeout(animkata3,700);} 
+  function befanimkata3(){kalimat.style="";kalimatb.style="";kalimatc.style="";kalimat.style="opacity:0";kalimatb.style="opacity:0";kalimatc.style="opacity:0";} 
+  function animkata3() {kalimat.innerHTML = kalimat3.innerHTML;kalimatb.innerHTML = kalimatb3.innerHTML;kalimat.style="opacity:1";kalimatb.style="opacity:1;font-size:16px;font-weight:400;";}
+  
+  function sbakhir(){Bn.style.display="none";setTimeout(stakhir,500);} function stakhir(){tmbl.innerHTML="Kirim";Tombol.style="opacity:1;transform: scale(1)";ftom=5;fungsi=0;}
+  
+  async function diterima(){
+      setInterval(createHeart,200);
+      fthilang();ftganti=1;
+      setTimeout(ftmuncul,400);
+      wallpaper.style="transform: scale(1)";
+      bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);transition:all 1s ease;margin-top:0;";
+      Tombol.style="opacity:0;transform: scale(.1);";
+      Content.style = "transition:all 1s ease;opacity:1;margin-top:7vh;";
+      setTimeout(sbakhir,1000);otomatis3();
+   }
+  
+  async function ditolak(){
+  	if(fungsi==1){
+  	Tombol.style="transition:all .3s ease;opacity:0";await swalst.fire({title: '' + kataditolak.innerHTML, timer: 2000, imageUrl: '' + stikerditolak.src,});tombol();
+  	}
+   }
+
+   const body = document.querySelector("body");function createHeart() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+</script>
+<!-- Sampai Sini -->
+</body>
+</html>
